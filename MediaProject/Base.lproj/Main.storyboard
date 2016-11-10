@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a1L-US-2Qh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--musique-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MusicListViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,267 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ura-Se-k9h">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="musicCell" rowHeight="80" id="VTn-t1-wBQ" customClass="MusicTableViewCell" customModule="MediaProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VTn-t1-wBQ" id="j8w-B6-OcP">
+                                            <frame key="frameInset" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jf-9f-ndK">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5jf-9f-ndK" firstAttribute="top" secondItem="j8w-B6-OcP" secondAttribute="topMargin" id="EGd-c6-MgF"/>
+                                                <constraint firstItem="5jf-9f-ndK" firstAttribute="leading" secondItem="j8w-B6-OcP" secondAttribute="leadingMargin" constant="10" id="Vgn-AH-c9d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="5jf-9f-ndK" id="dwU-Lr-hBg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Mdh-aD-r9Y"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jOP-Yb-SG6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ura-Se-k9h" secondAttribute="bottom" id="464-YK-3m8"/>
+                            <constraint firstAttribute="trailing" secondItem="ura-Se-k9h" secondAttribute="trailing" id="UU4-di-9FI"/>
+                            <constraint firstItem="ura-Se-k9h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cdB-ZN-5ny"/>
+                            <constraint firstItem="ura-Se-k9h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xC2-kC-8p8"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="musique" id="6PW-dL-Eao">
+                        <barButtonItem key="backBarButtonItem" title="liste" id="E6M-QP-MTc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tkr-KG-ZY6">
+                            <connections>
+                                <segue destination="pO9-uh-qdL" kind="show" id="NMs-T7-Vpy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="dMt-rr-tY4" kind="show" identifier="toMusicDetailController" id="G54-0m-bSr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1710" y="793"/>
+        </scene>
+        <!--Music Add View Controller-->
+        <scene sceneID="tCc-av-B0b">
+            <objects>
+                <viewController id="pO9-uh-qdL" customClass="MusicAddViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h4q-qI-xwr"/>
+                        <viewControllerLayoutGuide type="bottom" id="gCn-Cb-2v1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ax2-Ke-had">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WT7-iW-zFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2498" y="793"/>
+        </scene>
+        <!--Music Detail View Controller-->
+        <scene sceneID="eFv-VZ-TyG">
+            <objects>
+                <viewController id="dMt-rr-tY4" customClass="MusicDetailViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hQa-50-qOD"/>
+                        <viewControllerLayoutGuide type="bottom" id="zxD-y1-peB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mOG-r2-a6I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZA-U0-gCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="1556"/>
+        </scene>
+        <!--musique-->
+        <scene sceneID="jyo-Mi-jMn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eMU-qV-lal" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="musique" image="music" selectedImage="musicFilled" id="nT4-WO-KxX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ttc-gV-qlQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VGe-oq-TOX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kcr-Nk-YWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="793"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0fZ-i8-geV">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="a1L-US-2Qh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="8Uf-5O-HzE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eMU-qV-lal" kind="relationship" relationship="viewControllers" id="THS-gz-sx2"/>
+                        <segue destination="cMW-gd-XT7" kind="relationship" relationship="viewControllers" id="yu4-xt-Hs5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJW-xs-g2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-822" y="2300"/>
+        </scene>
+        <!--vidéo-->
+        <scene sceneID="mN4-UQ-kiX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vtY-M5-5yd" customClass="VideoListViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a6F-fq-9tZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="sGE-Dg-1qA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MdP-gY-Uon">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-kF-j8U">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoCell" rowHeight="80" id="9El-dF-4oI" customClass="VideoTableViewCell" customModule="MediaProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9El-dF-4oI" id="9Fj-vn-kzg">
+                                            <frame key="frameInset" width="1000" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fel-HL-n8F">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fel-HL-n8F" firstAttribute="leading" secondItem="9Fj-vn-kzg" secondAttribute="leadingMargin" constant="10" id="caa-5C-GXp"/>
+                                                <constraint firstItem="fel-HL-n8F" firstAttribute="top" secondItem="9Fj-vn-kzg" secondAttribute="topMargin" id="y45-ax-CpI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="fel-HL-n8F" id="6pA-oa-jZc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vtY-M5-5yd" id="zQr-Qh-1ka"/>
+                                    <outlet property="delegate" destination="vtY-M5-5yd" id="yiR-y9-nN3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dvn-kF-j8U" firstAttribute="top" secondItem="a6F-fq-9tZ" secondAttribute="bottom" id="0pw-t1-SLw"/>
+                            <constraint firstItem="sGE-Dg-1qA" firstAttribute="top" secondItem="dvn-kF-j8U" secondAttribute="bottom" id="70f-qk-jYL"/>
+                            <constraint firstItem="dvn-kF-j8U" firstAttribute="leading" secondItem="MdP-gY-Uon" secondAttribute="leading" id="mV3-Ie-N8s"/>
+                            <constraint firstAttribute="trailing" secondItem="dvn-kF-j8U" secondAttribute="trailing" id="mdl-NT-LWv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="vidéo" id="2Wy-24-Vh3">
+                        <barButtonItem key="backBarButtonItem" title="liste" id="TBk-Mq-wna"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lRo-IG-l7e">
+                            <connections>
+                                <segue destination="6gc-NI-LwB" kind="show" id="6be-j4-geO">
+                                    <nil key="action"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Rqb-uY-Lf3" kind="show" identifier="toVideoDetailController" id="4mL-rJ-wT1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="37d-Xy-ddX" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="2300"/>
+        </scene>
+        <!--Video Add View Controller-->
+        <scene sceneID="H0S-tL-4eF">
+            <objects>
+                <viewController id="6gc-NI-LwB" customClass="VideoAddViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kCb-QE-FGL"/>
+                        <viewControllerLayoutGuide type="bottom" id="yXv-lu-I7Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yml-dX-kHc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6t-0F-Mdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="2300"/>
+        </scene>
+        <!--Video Detail View Controller-->
+        <scene sceneID="vUQ-Dp-8sA">
+            <objects>
+                <viewController id="Rqb-uY-Lf3" customClass="VideoDetailViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NZ4-vZ-CFG"/>
+                        <viewControllerLayoutGuide type="bottom" id="lGO-Rb-K4N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aGg-Iy-oV8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkR-kb-7io" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="3061"/>
+        </scene>
+        <!--vidéo-->
+        <scene sceneID="kdv-kR-gaz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cMW-gd-XT7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="vidéo" image="video" selectedImage="videoFilled" id="yLa-xI-Pv4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Nk-aM-sdN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vtY-M5-5yd" kind="relationship" relationship="rootViewController" id="gc9-cX-KOV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fn0-gw-em5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="2300"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="music" width="25" height="25"/>
+        <image name="musicFilled" width="25" height="25"/>
+        <image name="video" width="27" height="25"/>
+        <image name="videoFilled" width="27" height="25"/>
+    </resources>
 </document>
