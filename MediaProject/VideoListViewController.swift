@@ -7,36 +7,54 @@
 //
 
 import UIKit
+import Alamofire
 
 class VideoListViewController: UIViewController {
 
+    public var videos: [Media] = [];
+    @IBOutlet var videosTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let url: String = "https://clementpeyrabere.net:8003/list/video";
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
+            let data = response.result.value as! [AnyObject]
+            for item in data {
+                let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int);
+                self.videos.append(media);
+            }
+            
+            DispatchQueue.main.async(execute: {
+                self.videosTableView.reloadData()
+            });
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "videoDetails") {
+            let videoDetailController: VideoDetailViewController = segue.destination as! VideoDetailViewController
+            if let selectedVideoCell = sender as? VideoTableViewCell {
+                let indexPath = videosTableView.indexPath(for: selectedVideoCell)!
+                let selectedVideo = videos[indexPath.row]
+                videoDetailController.video = selectedVideo
+            }
+        }
     }
-    */
-
 }
 
 extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return videos.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,7 +62,7 @@ extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
 		if cell == nil {
 			cell = VideoTableViewCell(style: .default, reuseIdentifier: "videoCell")
 		}
-		cell!.titleLabel.text = "test video"
+		cell!.titleLabel.text = self.videos[indexPath.row].name
 		return cell!
 	}
 }

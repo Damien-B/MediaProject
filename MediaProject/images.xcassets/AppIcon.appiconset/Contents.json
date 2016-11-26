@@ -119,6 +119,18 @@
       "idiom" : "ipad",
       "size" : "83.5x83.5",
       "scale" : "2x"
+    },
+    {
+      "filename" : "back.png",
+      "unassigned" : true
+    },
+    {
+      "filename" : "back@2x.png",
+      "unassigned" : true
+    },
+    {
+      "filename" : "back@3x.png",
+      "unassigned" : true
     }
   ],
   "info" : {
