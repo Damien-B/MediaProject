@@ -22,7 +22,7 @@ class MusicListViewController: UIViewController {
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
             let data = response.result.value as! [AnyObject]
             for item in data {
-                let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int);
+                let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int, coverURL: item["coverImageURL"]! as! String);
                 self.songs.append(media);
             }
             
@@ -40,8 +40,7 @@ class MusicListViewController: UIViewController {
     
     
      // MARK: - Navigation
-     
-    
+	
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "songDetails") {
             let musicDetailController: MusicDetailViewController = segue.destination as! MusicDetailViewController
@@ -52,7 +51,6 @@ class MusicListViewController: UIViewController {
             }
         }
      }
-    
     
 }
 

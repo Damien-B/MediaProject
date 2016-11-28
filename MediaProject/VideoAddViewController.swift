@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Alamofire
 
-class VideoAddViewController: UIViewController {
+class VideoAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+	var videoInfo: [String : Any]?
+	@IBOutlet weak var videoNameTextField: UITextField!
+	@IBOutlet weak var chooseVideoButton: UIButton!
+	@IBOutlet weak var sendVideoButton: UIButton!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		self.sendVideoButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
 
@@ -20,16 +26,70 @@ class VideoAddViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	
+	// MARK: - Helpers
+	
+	
+	// MARK: - Actions
+	
+	@IBAction func sendVideo(_ sender: AnyObject) {
+		if let info = self.videoInfo {
+			if let videoURL = info[UIImagePickerControllerMediaURL] as? URL {
+				print(videoURL)
+				let tmpString = "\(info[UIImagePickerControllerReferenceURL] as! NSURL)"
+				let extensionString = tmpString.substring(from: tmpString.range(of: "ext=")!.upperBound)
+				
+				// TODO: add textfield for the name of the video (filename)
+				if let name = self.videoNameTextField.text {
+					if name != "" {
+						Alamofire.upload(
+							multipartFormData: { multipartFormData in
+								multipartFormData.append(videoURL, withName: "videoname", fileName: "\(name).\(extensionString)", mimeType: "video/quicktime")
+							},
+							to: "https://clementpeyrabere.net:8003/upload",
+							encodingCompletion: { encodingResult in
+								switch encodingResult {
+								case .success(let upload, _, _):
+									print(upload)
+									self.navigationController?.popViewController(animated: true)
+								case .failure(let encodingError):
+									print(encodingError)
+								}
+							}
+						)
+					} else {
+						let nameAlert = UIAlertController(title: "information manquante", message: "vous devez remplir le champ nom", preferredStyle: UIAlertControllerStyle.alert)
+						nameAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+							self.videoNameTextField.becomeFirstResponder()
+						}))
+					}
+				}
+			}
+		}
+	}
+	
+	@IBAction func chooseVideo(_ sender: AnyObject) {
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+			let imagePickerController = UIImagePickerController()
+			imagePickerController.sourceType = .photoLibrary
+			imagePickerController.allowsEditing = true
+			imagePickerController.delegate = self
+			imagePickerController.mediaTypes = ["public.movie"]
+			self.present(imagePickerController, animated: true, completion: nil)
+		}
+	}
+	
+	// MARK: - UIImagePickerControllerDelegate
+	
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+		print(info)
+		self.videoInfo = info
+		
+		self.sendVideoButton.titleLabel!.text = "changer de vidéo"
+		self.sendVideoButton.isEnabled = true
+		self.sendVideoButton.backgroundColor = UIColor(red: 90.0/255.0, green: 170.0/255.0, blue: 60.0/255.0, alpha: 1)
+		
+		picker.dismiss(animated: true, completion: nil)
+	}
 
 }

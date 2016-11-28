@@ -23,7 +23,8 @@ class MusicDetailViewController: UIViewController {
     @IBOutlet var musicControls: UIStackView!
     @IBOutlet var downloadProgressView: UIProgressView!
     @IBOutlet var downloadProgressLabel: UILabel!
-    
+	@IBOutlet weak var coverImage: UIImageView!
+	
     private var fileURL: URL?;
     
     override func viewDidLoad() {
@@ -32,8 +33,18 @@ class MusicDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let songId: String = self.song!.id;
-        let url: String = "https://clementpeyrabere.net:8003/download/audio/" + songId;
-        
+		let url: String = "https://clementpeyrabere.net:8003/download/audio/" + songId;
+		// downloading cover image
+		if let song = self.song {
+			if let cover = song.coverURL {
+				let url = URL(string: cover)
+				do {
+					let data = try Data(contentsOf: url!)
+					self.coverImage.image = UIImage(data: data)
+				} catch {print("error with cover image url")}
+			} else {print("error with cover image url")}
+		} else {print("error with cover image url")}
+		
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let documentsURL = URL(fileURLWithPath: documentsPath, isDirectory: true)
         fileURL = documentsURL.appendingPathComponent((self.song?.name)! + ".mp3")

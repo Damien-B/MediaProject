@@ -16,30 +16,38 @@ class VideoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url: String = "https://clementpeyrabere.net:8003/list/video";
-        
-        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
-            let data = response.result.value as! [AnyObject]
-            for item in data {
-                let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int);
-                self.videos.append(media);
-            }
-            
-            DispatchQueue.main.async(execute: {
-                self.videosTableView.reloadData()
-            });
-        }
+//        self.fetchVideos()
+		
     }
+	override func viewDidAppear(_ animated: Bool) {
+		self.fetchVideos()
+	}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	// MARK: - Helpers
 
-    
+	func fetchVideos() {
+		let url: String = "https://clementpeyrabere.net:8003/list/video";
+		Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
+			self.videos = []
+			let data = response.result.value as! [AnyObject]
+			for item in data {
+				let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int);
+				self.videos.append(media);
+			}
+			
+			DispatchQueue.main.async(execute: {
+				self.videosTableView.reloadData()
+			});
+		}
+	}
+	
     // MARK: - Navigation
+	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "videoDetails") {
             let videoDetailController: VideoDetailViewController = segue.destination as! VideoDetailViewController
@@ -50,11 +58,12 @@ class VideoListViewController: UIViewController {
             }
         }
     }
+	
 }
 
 extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return videos.count
+		return self.videos.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

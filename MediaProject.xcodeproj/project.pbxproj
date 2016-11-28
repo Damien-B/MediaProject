@@ -12,7 +12,6 @@
 		6D61ECC21DD33F3E0088A690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D61ECC01DD33F3E0088A690 /* LaunchScreen.storyboard */; };
 		6D61ECCA1DD3424F0088A690 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECC91DD3424F0088A690 /* MusicListViewController.swift */; };
 		6D61ECCC1DD3425A0088A690 /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECCB1DD3425A0088A690 /* MusicDetailViewController.swift */; };
-		6D61ECCE1DD342610088A690 /* MusicAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECCD1DD342610088A690 /* MusicAddViewController.swift */; };
 		6D61ECD01DD342680088A690 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECCF1DD342680088A690 /* VideoListViewController.swift */; };
 		6D61ECD21DD3427F0088A690 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECD11DD3427F0088A690 /* VideoDetailViewController.swift */; };
 		6D61ECD41DD3428A0088A690 /* VideoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECD31DD3428A0088A690 /* VideoAddViewController.swift */; };
@@ -34,7 +33,6 @@
 		6D61ECC31DD33F3E0088A690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D61ECC91DD3424F0088A690 /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		6D61ECCB1DD3425A0088A690 /* MusicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDetailViewController.swift; sourceTree = "<group>"; };
-		6D61ECCD1DD342610088A690 /* MusicAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAddViewController.swift; sourceTree = "<group>"; };
 		6D61ECCF1DD342680088A690 /* VideoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 		6D61ECD11DD3427F0088A690 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		6D61ECD31DD3428A0088A690 /* VideoAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAddViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				6D61ECC91DD3424F0088A690 /* MusicListViewController.swift */,
 				6D61ECD51DD343410088A690 /* MusicTableViewCell.swift */,
 				6D61ECCB1DD3425A0088A690 /* MusicDetailViewController.swift */,
-				6D61ECCD1DD342610088A690 /* MusicAddViewController.swift */,
 			);
 			name = music;
 			sourceTree = "<group>";
@@ -276,7 +273,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D61ECCE1DD342610088A690 /* MusicAddViewController.swift in Sources */,
 				6D61ECD21DD3427F0088A690 /* VideoDetailViewController.swift in Sources */,
 				6D61ECD41DD3428A0088A690 /* VideoAddViewController.swift in Sources */,
 				6D61ECCC1DD3425A0088A690 /* MusicDetailViewController.swift in Sources */,

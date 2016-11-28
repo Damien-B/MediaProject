@@ -14,14 +14,26 @@ public class Media : NSObject {
     public var id: String;
     public var mimeType: String;
     public var fullPath: String;
-    public var size: Int;
-    
-    public init(id: String, name: String, mimeType: String, fullPath: String, size: Int) {
-        self.id = id;
-        self.name = name;
-        self.mimeType = mimeType;
-        self.fullPath = fullPath;
-        self.size = size;
-    }
-    
+	public var size: Int;
+	public var coverURL: String?
+	
+	public init(id: String, name: String, mimeType: String, fullPath: String, size: Int, coverURL: String?) {
+		self.id = id;
+		self.name = name;
+		self.mimeType = mimeType;
+		self.fullPath = fullPath;
+		self.size = size;
+		if let cover = coverURL {
+			self.coverURL = cover
+		}
+	}
+	
+	public init(id: String, name: String, mimeType: String, fullPath: String, size: Int) {
+		self.id = id;
+		self.name = name;
+		self.mimeType = mimeType;
+		self.fullPath = fullPath;
+		self.size = size;
+	}
+	
 }
