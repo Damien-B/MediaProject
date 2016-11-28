@@ -12,34 +12,52 @@ import Alamofire
 class MusicListViewController: UIViewController {
     
     public var songs: [Media] = [];
-    @IBOutlet var songsTableView: UITableView!
-    
+	@IBOutlet var songsTableView: UITableView!
+	lazy var refreshControl: UIRefreshControl = {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(VideoListViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+		
+		return refreshControl
+	}()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url: String = "https://clementpeyrabere.net:8003/list/audio";
-
-        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
-            let data = response.result.value as! [AnyObject]
-            for item in data {
-                let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int, coverURL: item["coverImageURL"]! as! String);
-                self.songs.append(media);
-            }
-            
-            DispatchQueue.main.async(execute: {
-                self.songsTableView.reloadData()
-            });
-        }
-    }
+        self.songsTableView.addSubview(self.refreshControl)
+		self.fetchSongs()
+	}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-     // MARK: - Navigation
+    // MARK: - Helpers
+	
+	func handleRefresh(_ refreshControl: UIRefreshControl) {
+		self.fetchSongs()
+		let time = DispatchTime.now() + 1
+		DispatchQueue.main.asyncAfter(deadline: time) {
+			refreshControl.endRefreshing()
+		}
+	}
+	
+	func fetchSongs() {
+		let url: String = "https://clementpeyrabere.net:8003/list/audio";
+		
+		Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
+			let data = response.result.value as! [AnyObject]
+			for item in data {
+				let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int, coverURL: item["coverImageURL"]! as! String);
+				self.songs.append(media);
+			}
+			
+			DispatchQueue.main.async(execute: {
+				self.songsTableView.reloadData()
+			});
+		}
+	}
+	
+	// MARK: - Navigation
 	
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "songDetails") {

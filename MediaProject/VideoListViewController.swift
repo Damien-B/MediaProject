@@ -10,16 +10,24 @@ import UIKit
 import Alamofire
 
 class VideoListViewController: UIViewController {
-
+	
+//	var refreshControl: UIRefreshControl!
     public var videos: [Media] = [];
     @IBOutlet var videosTableView: UITableView!
-    
+	lazy var refreshControl: UIRefreshControl = {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(VideoListViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+		
+		return refreshControl
+	}()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.fetchVideos()
 		
     }
 	override func viewDidAppear(_ animated: Bool) {
+		self.videosTableView.addSubview(self.refreshControl)
 		self.fetchVideos()
 	}
     
@@ -30,6 +38,14 @@ class VideoListViewController: UIViewController {
 	
 	// MARK: - Helpers
 
+	func handleRefresh(_ refreshControl: UIRefreshControl) {
+		self.fetchVideos()
+		let time = DispatchTime.now() + 1
+		DispatchQueue.main.asyncAfter(deadline: time) {
+			refreshControl.endRefreshing()
+		}
+	}
+	
 	func fetchVideos() {
 		let url: String = "https://clementpeyrabere.net:8003/list/video";
 		Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in

@@ -12,7 +12,7 @@ import Alamofire
 import AVKit
 import AVFoundation
 
-class VideoDetailViewController: UIViewController {
+class VideoDetailViewController: UIViewController, AVPlayerViewControllerDelegate {
     
     public var video: Media?;
 
@@ -88,15 +88,5 @@ class VideoDetailViewController: UIViewController {
 	@IBAction func showVideo(_ sender: AnyObject) {
 		self.playVideo()
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
