@@ -63,7 +63,6 @@ class VideoListViewController: UIViewController {
 	}
 	
     // MARK: - Navigation
-	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "videoDetails") {
             let videoDetailController: VideoDetailViewController = segue.destination as! VideoDetailViewController
@@ -90,4 +89,8 @@ extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
 		cell!.titleLabel.text = self.videos[indexPath.row].name
 		return cell!
 	}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

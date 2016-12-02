@@ -184,7 +184,7 @@
 				TargetAttributes = {
 					6D61ECB31DD33F3E0088A690 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B6V5UMD87T;
+						DevelopmentTeam = FY6W72MUV4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -405,10 +405,10 @@
 			baseConfigurationReference = 3B41B1D6ED3BE628EB21BFE2 /* Pods-MediaProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B6V5UMD87T;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
 				INFOPLIST_FILE = MediaProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dab.MediaProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clempeyr.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -419,10 +419,10 @@
 			baseConfigurationReference = 9D37652E196882042CE8F2C0 /* Pods-MediaProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B6V5UMD87T;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
 				INFOPLIST_FILE = MediaProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dab.MediaProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clempeyr.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

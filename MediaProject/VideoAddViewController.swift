@@ -58,7 +58,7 @@ class VideoAddViewController: UIViewController, UIImagePickerControllerDelegate,
 							}
 						)
 					} else {
-						let nameAlert = UIAlertController(title: "information manquante", message: "vous devez remplir le champ nom", preferredStyle: UIAlertControllerStyle.alert)
+						let nameAlert = UIAlertController(title: "Missing information", message: "Please fill name field", preferredStyle: UIAlertControllerStyle.alert)
 						nameAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
 							self.videoNameTextField.becomeFirstResponder()
 						}))
@@ -85,7 +85,7 @@ class VideoAddViewController: UIViewController, UIImagePickerControllerDelegate,
 		print(info)
 		self.videoInfo = info
 		
-		self.sendVideoButton.titleLabel!.text = "changer de vidéo"
+		self.sendVideoButton.titleLabel!.text = "Choose another video"
 		self.sendVideoButton.isEnabled = true
 		self.sendVideoButton.backgroundColor = UIColor(red: 90.0/255.0, green: 170.0/255.0, blue: 60.0/255.0, alpha: 1)
 		

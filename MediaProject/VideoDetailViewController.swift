@@ -38,7 +38,8 @@ class VideoDetailViewController: UIViewController, AVPlayerViewControllerDelegat
 	func downloadVideo() {
 		let videoId: String = self.video!.id;
 		let url: String = "https://clementpeyrabere.net:8003/download/video/" + videoId;
-		
+		self.title = self.video?.name
+        
 		let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 		let documentsURL = URL(fileURLWithPath: documentsPath, isDirectory: true)
 		fileURL = documentsURL.appendingPathComponent((self.video?.name)! + ".mp4")

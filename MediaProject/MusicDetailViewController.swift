@@ -34,6 +34,8 @@ class MusicDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let songId: String = self.song!.id;
 		let url: String = "https://clementpeyrabere.net:8003/download/audio/" + songId;
+        
+        self.title = self.song?.name;
 		// downloading cover image
 		if let song = self.song {
 			if let cover = song.coverURL {
@@ -89,6 +91,7 @@ class MusicDetailViewController: UIViewController {
         } else {
             self.player?.play();
             self.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            // set timer, update progress bar
         }
         isPlaying = !isPlaying;
     }
