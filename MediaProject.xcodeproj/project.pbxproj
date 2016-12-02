@@ -21,8 +21,19 @@
 		756887201DE99EF2004D8EA0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7568871E1DE99EF2004D8EA0 /* AVFoundation.framework */; };
 		756887211DE99EF2004D8EA0 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7568871F1DE99EF2004D8EA0 /* AVKit.framework */; };
 		758AEA011DE8B04B00BD3FF0 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758AEA001DE8B04B00BD3FF0 /* Media.swift */; };
+		759C50EE1DF1CCB7002ABC06 /* MediaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C50ED1DF1CCB7002ABC06 /* MediaProjectTests.swift */; };
 		E7EE709BD849B1514B1BA0FD /* Pods_MediaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4257899AAADADB0F049BD61 /* Pods_MediaProject.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		759C50F01DF1CCB7002ABC06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D61ECAC1DD33F3E0088A690 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D61ECB31DD33F3E0088A690;
+			remoteInfo = MediaProject;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3B41B1D6ED3BE628EB21BFE2 /* Pods-MediaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaProject/Pods-MediaProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -42,6 +53,9 @@
 		7568871E1DE99EF2004D8EA0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7568871F1DE99EF2004D8EA0 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		758AEA001DE8B04B00BD3FF0 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		759C50EB1DF1CCB7002ABC06 /* MediaProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		759C50ED1DF1CCB7002ABC06 /* MediaProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaProjectTests.swift; sourceTree = "<group>"; };
+		759C50EF1DF1CCB7002ABC06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D37652E196882042CE8F2C0 /* Pods-MediaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaProject/Pods-MediaProject.release.xcconfig"; sourceTree = "<group>"; };
 		D4257899AAADADB0F049BD61 /* Pods_MediaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -54,6 +68,13 @@
 				756887201DE99EF2004D8EA0 /* AVFoundation.framework in Frameworks */,
 				756887211DE99EF2004D8EA0 /* AVKit.framework in Frameworks */,
 				E7EE709BD849B1514B1BA0FD /* Pods_MediaProject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		759C50E81DF1CCB7002ABC06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				6D61ECB61DD33F3E0088A690 /* MediaProject */,
+				759C50EC1DF1CCB7002ABC06 /* MediaProjectTests */,
 				6D61ECB51DD33F3E0088A690 /* Products */,
 				02A580F2E0AE6A827E85AA4A /* Pods */,
 				B983E600F18394BE21E160CE /* Frameworks */,
@@ -83,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				6D61ECB41DD33F3E0088A690 /* MediaProject.app */,
+				759C50EB1DF1CCB7002ABC06 /* MediaProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +162,15 @@
 			name = medias;
 			sourceTree = "<group>";
 		};
+		759C50EC1DF1CCB7002ABC06 /* MediaProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				759C50ED1DF1CCB7002ABC06 /* MediaProjectTests.swift */,
+				759C50EF1DF1CCB7002ABC06 /* Info.plist */,
+			);
+			path = MediaProjectTests;
+			sourceTree = "<group>";
+		};
 		B983E600F18394BE21E160CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,13 +204,31 @@
 			productReference = 6D61ECB41DD33F3E0088A690 /* MediaProject.app */;
 			productType = "com.apple.product-type.application";
 		};
+		759C50EA1DF1CCB7002ABC06 /* MediaProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 759C50F41DF1CCB7002ABC06 /* Build configuration list for PBXNativeTarget "MediaProjectTests" */;
+			buildPhases = (
+				759C50E71DF1CCB7002ABC06 /* Sources */,
+				759C50E81DF1CCB7002ABC06 /* Frameworks */,
+				759C50E91DF1CCB7002ABC06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				759C50F11DF1CCB7002ABC06 /* PBXTargetDependency */,
+			);
+			name = MediaProjectTests;
+			productName = MediaProjectTests;
+			productReference = 759C50EB1DF1CCB7002ABC06 /* MediaProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6D61ECAC1DD33F3E0088A690 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Damien Bannerot";
 				TargetAttributes = {
@@ -186,6 +236,12 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FY6W72MUV4;
 						ProvisioningStyle = Automatic;
+					};
+					759C50EA1DF1CCB7002ABC06 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = FY6W72MUV4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D61ECB31DD33F3E0088A690;
 					};
 				};
 			};
@@ -203,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				6D61ECB31DD33F3E0088A690 /* MediaProject */,
+				759C50EA1DF1CCB7002ABC06 /* MediaProjectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -215,6 +272,13 @@
 				6D61ECDC1DD3531C0088A690 /* images.xcassets in Resources */,
 				6D61ECC21DD33F3E0088A690 /* LaunchScreen.storyboard in Resources */,
 				6D61ECBD1DD33F3E0088A690 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		759C50E91DF1CCB7002ABC06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +349,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		759C50E71DF1CCB7002ABC06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				759C50EE1DF1CCB7002ABC06 /* MediaProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		759C50F11DF1CCB7002ABC06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D61ECB31DD33F3E0088A690 /* MediaProject */;
+			targetProxy = 759C50F01DF1CCB7002ABC06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6D61ECBB1DD33F3E0088A690 /* Main.storyboard */ = {
@@ -428,6 +508,36 @@
 			};
 			name = Release;
 		};
+		759C50F21DF1CCB7002ABC06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FY6W72MUV4;
+				INFOPLIST_FILE = MediaProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ESGI.MediaProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaProject.app/MediaProject";
+			};
+			name = Debug;
+		};
+		759C50F31DF1CCB7002ABC06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FY6W72MUV4;
+				INFOPLIST_FILE = MediaProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ESGI.MediaProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaProject.app/MediaProject";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,6 +558,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		759C50F41DF1CCB7002ABC06 /* Build configuration list for PBXNativeTarget "MediaProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				759C50F21DF1CCB7002ABC06 /* Debug */,
+				759C50F31DF1CCB7002ABC06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
