@@ -42,19 +42,16 @@ class MusicListViewController: UIViewController {
 	}
 	
 	func fetchSongs() {
-		let url: String = "https://clementpeyrabere.net:8003/list/audio";
-		
-		Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
-			let data = response.result.value as! [AnyObject]
-			for item in data {
-				let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int, coverURL: item["coverImageURL"]! as! String);
-				self.songs.append(media);
-			}
-			
-			DispatchQueue.main.async(execute: {
-				self.songsTableView.reloadData()
-			});
-		}
+        Server.listAudio( { (error, success,data) in
+            for item in data {
+                let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int, coverURL: item["coverImageURL"]! as! String);
+                self.songs.append(media);
+            }
+                
+            DispatchQueue.main.async(execute: {
+                self.songsTableView.reloadData()
+            });
+        })
 	}
 	
 	// MARK: - Navigation

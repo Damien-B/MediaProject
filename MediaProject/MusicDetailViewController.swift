@@ -33,7 +33,6 @@ class MusicDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let songId: String = self.song!.id;
-		let url: String = "https://clementpeyrabere.net:8003/download/audio/" + songId;
         
         self.title = self.song?.name;
 		// downloading cover image
@@ -60,9 +59,11 @@ class MusicDetailViewController: UIViewController {
             self.downloadProgressLabel.isHidden = false;
             self.downloadProgressLabel.text = "Downloading ... 0%";
             self.downloadProgressView.isHidden = false;
-            Alamofire.download(url, to:
-                destination)
+            
+            debugPrint(songId);
+            Server.downloadAudio(songId, destination)
                 .downloadProgress { progress in
+                    debugPrint(progress);
                     self.downloadProgressView.setProgress(Float(progress.fractionCompleted), animated: true)
                     self.downloadProgressLabel.text = "Downloading ... \(Int(progress.fractionCompleted * 100))%";
                 }.responseData { response in

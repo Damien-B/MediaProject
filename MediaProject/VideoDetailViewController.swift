@@ -53,8 +53,8 @@ class VideoDetailViewController: UIViewController, AVPlayerViewControllerDelegat
 			self.downloadProgressLabel.isHidden = false;
 			self.downloadProgressLabel.text = "Downloading ... 0%";
 			self.downloadProgressView.isHidden = false;
-			Alamofire.download(url, to:
-				destination)
+            
+			Server.downloadVideo(videoId, destination)
 				.downloadProgress { progress in
 					self.downloadProgressView.setProgress(Float(progress.fractionCompleted), animated: true)
 					self.downloadProgressLabel.text = "Downloading ... \(Int(progress.fractionCompleted * 100))%";
