@@ -42,6 +42,7 @@ class MusicListViewController: UIViewController {
 	}
 	
 	func fetchSongs() {
+        songs = [];
         Server.listAudio( { (error, success,data) in
             for item in data {
                 let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int, coverURL: item["coverImageURL"]! as! String);

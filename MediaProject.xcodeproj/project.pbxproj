@@ -19,6 +19,19 @@
 		6D61ECD81DD343480088A690 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECD71DD343480088A690 /* VideoTableViewCell.swift */; };
 		6D61ECDC1DD3531C0088A690 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D61ECDB1DD3531C0088A690 /* images.xcassets */; };
 		753EA3E41E1FF9B3009D0265 /* ServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA3E31E1FF9B3009D0265 /* ServerTests.swift */; };
+		753EA3E61E1FFAC2009D0265 /* MusicListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA3E51E1FFAC2009D0265 /* MusicListViewControllerTests.swift */; };
+		753EA3E71E1FFCB9009D0265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D61ECBB1DD33F3E0088A690 /* Main.storyboard */; };
+		753EA3E81E1FFD61009D0265 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECC91DD3424F0088A690 /* MusicListViewController.swift */; };
+		753EA3E91E1FFD63009D0265 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECD51DD343410088A690 /* MusicTableViewCell.swift */; };
+		753EA3EA1E1FFD66009D0265 /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECCB1DD3425A0088A690 /* MusicDetailViewController.swift */; };
+		753EA3EC1E1FFD6B009D0265 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECD71DD343480088A690 /* VideoTableViewCell.swift */; };
+		753EA3ED1E1FFD6D009D0265 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECD11DD3427F0088A690 /* VideoDetailViewController.swift */; };
+		753EA3EE1E1FFD6F009D0265 /* VideoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECD31DD3428A0088A690 /* VideoAddViewController.swift */; };
+		753EA3EF1E1FFD72009D0265 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C50F51DF1D0F9002ABC06 /* Server.swift */; };
+		753EA3F01E1FFDB3009D0265 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758AEA001DE8B04B00BD3FF0 /* Media.swift */; };
+		753EA3F11E1FFDE5009D0265 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61ECCF1DD342680088A690 /* VideoListViewController.swift */; };
+		753EA3F31E20000D009D0265 /* VideoListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA3F21E20000D009D0265 /* VideoListViewControllerTests.swift */; };
+		753EA3F51E20013F009D0265 /* MusicDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA3F41E20013F009D0265 /* MusicDetailViewControllerTests.swift */; };
 		756887201DE99EF2004D8EA0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7568871E1DE99EF2004D8EA0 /* AVFoundation.framework */; };
 		756887211DE99EF2004D8EA0 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7568871F1DE99EF2004D8EA0 /* AVKit.framework */; };
 		758AEA011DE8B04B00BD3FF0 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758AEA001DE8B04B00BD3FF0 /* Media.swift */; };
@@ -57,6 +70,9 @@
 		6D61ECD71DD343480088A690 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		6D61ECDB1DD3531C0088A690 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		753EA3E31E1FF9B3009D0265 /* ServerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTests.swift; sourceTree = "<group>"; };
+		753EA3E51E1FFAC2009D0265 /* MusicListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewControllerTests.swift; sourceTree = "<group>"; };
+		753EA3F21E20000D009D0265 /* VideoListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListViewControllerTests.swift; sourceTree = "<group>"; };
+		753EA3F41E20013F009D0265 /* MusicDetailViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		7568871E1DE99EF2004D8EA0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7568871F1DE99EF2004D8EA0 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		758AEA001DE8B04B00BD3FF0 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -180,6 +196,9 @@
 				759C50ED1DF1CCB7002ABC06 /* MediaProjectTests.swift */,
 				759C50EF1DF1CCB7002ABC06 /* Info.plist */,
 				753EA3E31E1FF9B3009D0265 /* ServerTests.swift */,
+				753EA3E51E1FFAC2009D0265 /* MusicListViewControllerTests.swift */,
+				753EA3F21E20000D009D0265 /* VideoListViewControllerTests.swift */,
+				753EA3F41E20013F009D0265 /* MusicDetailViewControllerTests.swift */,
 			);
 			path = MediaProjectTests;
 			sourceTree = "<group>";
@@ -296,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EA3E71E1FFCB9009D0265 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +436,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EA3E91E1FFD63009D0265 /* MusicTableViewCell.swift in Sources */,
+				753EA3F01E1FFDB3009D0265 /* Media.swift in Sources */,
+				753EA3EE1E1FFD6F009D0265 /* VideoAddViewController.swift in Sources */,
+				753EA3E81E1FFD61009D0265 /* MusicListViewController.swift in Sources */,
+				753EA3E61E1FFAC2009D0265 /* MusicListViewControllerTests.swift in Sources */,
+				753EA3F51E20013F009D0265 /* MusicDetailViewControllerTests.swift in Sources */,
+				753EA3ED1E1FFD6D009D0265 /* VideoDetailViewController.swift in Sources */,
+				753EA3F11E1FFDE5009D0265 /* VideoListViewController.swift in Sources */,
+				753EA3EF1E1FFD72009D0265 /* Server.swift in Sources */,
+				753EA3EA1E1FFD66009D0265 /* MusicDetailViewController.swift in Sources */,
+				753EA3EC1E1FFD6B009D0265 /* VideoTableViewCell.swift in Sources */,
+				753EA3F31E20000D009D0265 /* VideoListViewControllerTests.swift in Sources */,
 				753EA3E41E1FF9B3009D0265 /* ServerTests.swift in Sources */,
 				759C50EE1DF1CCB7002ABC06 /* MediaProjectTests.swift in Sources */,
 			);
