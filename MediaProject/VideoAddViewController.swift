@@ -42,21 +42,15 @@ class VideoAddViewController: UIViewController, UIImagePickerControllerDelegate,
 				// TODO: add textfield for the name of the video (filename)
 				if let name = self.videoNameTextField.text {
 					if name != "" {
-						Alamofire.upload(
-							multipartFormData: { multipartFormData in
-								multipartFormData.append(videoURL, withName: "videoname", fileName: "\(name).\(extensionString)", mimeType: "video/quicktime")
-							},
-							to: "https://clementpeyrabere.net:8003/upload",
-							encodingCompletion: { encodingResult in
-								switch encodingResult {
-								case .success(let upload, _, _):
-									print(upload)
-									self.navigationController?.popViewController(animated: true)
-								case .failure(let encodingError):
-									print(encodingError)
-								}
-							}
-						)
+                        Server.uploadVideo(videoURL, name, extensionString, encodingCompletion: { encodingResult in
+                            switch encodingResult {
+                            case .success(let upload, _, _):
+                                print(upload)
+                                self.navigationController?.popViewController(animated: true)
+                            case .failure(let encodingError):
+                                print(encodingError)
+                            }
+                        });
 					} else {
 						let nameAlert = UIAlertController(title: "Missing information", message: "Please fill name field", preferredStyle: UIAlertControllerStyle.alert)
 						nameAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in

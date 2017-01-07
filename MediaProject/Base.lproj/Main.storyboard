@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a1L-US-2Qh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a1L-US-2Qh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -15,7 +15,7 @@
         <!--Music-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MusicListViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MusicListViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MusicListViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -80,7 +80,7 @@
         <!--Music Detail View Controller-->
         <scene sceneID="eFv-VZ-TyG">
             <objects>
-                <viewController id="dMt-rr-tY4" customClass="MusicDetailViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MusicDetailViewController" id="dMt-rr-tY4" customClass="MusicDetailViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hQa-50-qOD"/>
                         <viewControllerLayoutGuide type="bottom" id="zxD-y1-peB"/>
@@ -112,8 +112,8 @@
                                     <constraint firstAttribute="width" constant="120" id="XLE-AL-VUx"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jDB-7m-cu0">
-                                <rect key="frame" x="37" y="447" width="300" height="42.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jDB-7m-cu0">
+                                <rect key="frame" x="37" y="447" width="300" height="43"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKR-vO-ty0">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
@@ -199,7 +199,7 @@
         <!--Video-->
         <scene sceneID="mN4-UQ-kiX">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vtY-M5-5yd" customClass="VideoListViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoListViewController" automaticallyAdjustsScrollViewInsets="NO" id="vtY-M5-5yd" customClass="VideoListViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a6F-fq-9tZ"/>
                         <viewControllerLayoutGuide type="bottom" id="sGE-Dg-1qA"/>
@@ -342,7 +342,7 @@
         <!--Video Detail View Controller-->
         <scene sceneID="vUQ-Dp-8sA">
             <objects>
-                <viewController id="Rqb-uY-Lf3" customClass="VideoDetailViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoDetailViewController" id="Rqb-uY-Lf3" customClass="VideoDetailViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NZ4-vZ-CFG"/>
                         <viewControllerLayoutGuide type="bottom" id="lGO-Rb-K4N"/>
@@ -351,11 +351,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XGp-Rg-Gbc">
-                                <rect key="frame" x="38" y="334" width="300" height="0.0"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XGp-Rg-Gbc">
+                                <rect key="frame" x="38" y="334" width="300" height="52"/>
                                 <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Downloading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2i-QW-wVn">
-                                        <rect key="frame" x="-38" y="-334" width="300" height="0.0"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2i-QW-wVn">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DTO-bf-XzW"/>
                                         </constraints>
@@ -363,8 +363,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-Gh-mEE">
-                                        <rect key="frame" x="-38" y="-334" width="300" height="0.0"/>
+                                    <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-Gh-mEE">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="2"/>
                                     </progressView>
                                 </subviews>
                             </stackView>
