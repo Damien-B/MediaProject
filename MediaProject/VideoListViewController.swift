@@ -47,19 +47,18 @@ class VideoListViewController: UIViewController {
 	}
 	
 	func fetchVideos() {
-		let url: String = "https://clementpeyrabere.net:8003/list/video";
-		Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
-			self.videos = []
-			let data = response.result.value as! [AnyObject]
-			for item in data {
-				let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int);
-				self.videos.append(media);
-			}
-			
-			DispatchQueue.main.async(execute: {
-				self.videosTableView.reloadData()
-			});
-		}
+        
+        Server.listVideo( { (error, success,data) in
+            self.videos = []
+            for item in data {
+                let media: Media = Media(id: item["_id"]! as! String, name: item["name"]! as! String, mimeType: item["mimeType"]! as! String, fullPath: item["fullPath"]! as! String, size: item["size"] as! Int);
+                self.videos.append(media);
+            }
+            
+            DispatchQueue.main.async(execute: {
+                self.videosTableView.reloadData()
+            });
+        });
 	}
 	
     // MARK: - Navigation
