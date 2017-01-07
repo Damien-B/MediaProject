@@ -270,12 +270,12 @@
 				TargetAttributes = {
 					6D61ECB31DD33F3E0088A690 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = FY6W72MUV4;
+						DevelopmentTeam = B6V5UMD87T;
 						ProvisioningStyle = Automatic;
 					};
 					759C50EA1DF1CCB7002ABC06 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = FY6W72MUV4;
+						DevelopmentTeam = B6V5UMD87T;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6D61ECB31DD33F3E0088A690;
 					};
@@ -581,10 +581,10 @@
 			baseConfigurationReference = 3B41B1D6ED3BE628EB21BFE2 /* Pods-MediaProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = MediaProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clempeyr.MediaProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dab.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -595,10 +595,10 @@
 			baseConfigurationReference = 9D37652E196882042CE8F2C0 /* Pods-MediaProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = MediaProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clempeyr.MediaProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dab.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -609,7 +609,7 @@
 			baseConfigurationReference = 3C48446957F88437C5FDF406 /* Pods-MediaProjectTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = MediaProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -625,7 +625,7 @@
 			baseConfigurationReference = 2F9121E18A07560B9E8D63CA /* Pods-MediaProjectTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = MediaProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
